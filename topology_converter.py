@@ -17,6 +17,8 @@ def main():
     }
 
     pprint(data)
+    with open('vztahy.json', 'w') as fp:
+        json.dump(data, fp, indent=4)
 
 
 if __name__ == '__main__':
