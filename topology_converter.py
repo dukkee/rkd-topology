@@ -5,7 +5,7 @@ parts of topology blocks labels.
 Every such tspan element (by design) must have the next structure:
     <tspan type="usek" relations="[1, 2, 3]" additional-data="{}" ...>
 where:
-    type - [vyhybka|usek] - block type
+    type - [vyhybka|usek|tratUsek] - block type
     relations - list[int] - list of incident block IDs of the graph
     additional-data - dict - more details about blocks (here is an example
     for "usek" type:
@@ -15,11 +15,11 @@ where:
             "branch": 312
         }
 """
+import os
 import json
-from pprint import pprint
 from xml.dom import minidom
 
-TOPOLOGY_FILENAME = "topology.svg"
+TOPOLOGY_FILENAME = "kolejiste.svg"
 RELATIONS_FILENAME = 'vztahy.json'
 
 SWITCH_TYPE = "vyhybka"
@@ -42,10 +42,10 @@ def convert_svg_to_dict():
     """
 
     def _convert_block_data(node):
-        relations = json.loads(node.getAttribute(RELATIONS_KEY))
+        relations = list(map(str, json.loads(node.getAttribute(RELATIONS_KEY))))
         data = {
             "type": node.getAttribute('type'),
-            **json.loads(node.getAttribute(ADDITIONAL_DATA_KEY)),
+            **eval(node.getAttribute(ADDITIONAL_DATA_KEY)),
         }
 
         return relations, data
@@ -65,7 +65,6 @@ def convert_svg_to_dict():
         "data": additional_data,
     }
 
-    pprint(topology)
     with open(RELATIONS_FILENAME, 'w') as fp:
         json.dump(topology, fp, indent=4)
 
@@ -85,8 +84,8 @@ def update_svg_from_dict():
 
         b_id = str(get_block_id(node))
         node.setAttribute("type", data[b_id]["type"])
-        node.setAttribute(RELATIONS_KEY, json.dumps(relations[b_id]))
-        node.setAttribute(ADDITIONAL_DATA_KEY, json.dumps({
+        node.setAttribute(RELATIONS_KEY, str(list(map(int, relations[b_id]))))
+        node.setAttribute(ADDITIONAL_DATA_KEY, str({
             k: v for k, v in data[b_id].items() if k != "type"
         }))
 
@@ -94,14 +93,19 @@ def update_svg_from_dict():
         doc.writexml(fp, addindent=" ")
 
 
-def test_conversations():
+def test_conversions():
+    """Make test conversion to topology in SVG format into JSON and vice versa
+
+    """
     global RELATIONS_FILENAME
 
     convert_svg_to_dict()
 
     original_relations_filename = RELATIONS_FILENAME
-    RELATIONS_FILENAME = "vztahy1.json"
     update_svg_from_dict()
+
+    RELATIONS_FILENAME = "vztahy1.json"
+    convert_svg_to_dict()
 
     with open(original_relations_filename) as fp:
         data1 = json.load(fp)
@@ -110,6 +114,8 @@ def test_conversations():
         data2 = json.load(fp)
 
     assert data1 == data2
+
+    os.remove(RELATIONS_FILENAME)
 
 
 if __name__ == '__main__':
