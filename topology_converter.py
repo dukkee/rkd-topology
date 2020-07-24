@@ -8,11 +8,11 @@ where:
     type - [vyhybka|usek|tratUsek] - block type
     relations - list[int] - list of incident block IDs of the graph
     additional-data - dict - more details about blocks (here is an example
-    for "usek" type:
+    for "vyhybka" type:
         {
-            "start": 322,
-            "direct": 310,
-            "branch": 312
+            "120": "start",
+            "150": "S+",
+            "158": "S-"
         }
 """
 import os
@@ -90,7 +90,7 @@ def update_svg_from_dict():
         }))
 
     with open(TOPOLOGY_FILENAME, "w") as fp:
-        doc.writexml(fp, addindent=" ")
+        doc.writexml(fp, indent="   ")
 
 
 def test_conversions():
