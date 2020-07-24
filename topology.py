@@ -1,4 +1,5 @@
 import json
+import argparse
 
 import networkx as nx
 
@@ -6,6 +7,17 @@ import networkx as nx
 SWITCH_TYPE = "vyhybka"
 SECTION_TYPE = "usek"
 TRACK_SECTION_TYPE = "tratUsek"
+
+SWITCH_START_TYPE = "start"
+
+
+PARSER_DESCRIPTION = """
+Find path between start and stop sections.
+This script will print list of sections IDs and list of switch sections IDs 
+with their states ("S+" state means direct direction, "S-" is a branch).
+
+E.g. ["1", "2", "3"], [("4", "S+"), ("5", "S-")
+"""
 
 
 def build_topology_graph(data):
@@ -54,16 +66,23 @@ def find_path(graph, source, target, data):
                         item_id, block, path[i + 1]
                     )
                 )
+            switch_state = block["relations"][str(path[i + 1])]
+            if switch_state == SWITCH_START_TYPE:
+                switch_state = block["relations"][str(path[i - 1])]
 
-            switch_list.append((item_id, block["relations"][str(path[i + 1])]))
+            switch_list.append((item_id, switch_state))
 
     return sections_path, switch_list
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=PARSER_DESCRIPTION)
+    parser.add_argument('--start', required=True, help="Start path section")
+    parser.add_argument('--end', required=True, help="End path section")
+    args = parser.parse_args()
+
     with open("vztahy.json") as fp:
         data = json.load(fp)
 
     graph = build_topology_graph(data["relations"])
-
-    print(find_path(graph, "323", "313", data["data"]))
+    print(*find_path(graph, args.start, args.end, data["data"]), sep="\n")
