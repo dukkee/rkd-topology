@@ -3,6 +3,8 @@
 This repository contains helpful functions to support topology and find paths
  between different parts of this topology.
 
+![topology](./topology.svg)
+
 ## Introduction
 
 To find a path from A block to B block we build a graph. Nodes of this graph contains blocks of three types:
