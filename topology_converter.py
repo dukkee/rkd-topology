@@ -90,7 +90,7 @@ def update_svg_from_dict():
         }))
 
     with open(TOPOLOGY_FILENAME, "w") as fp:
-        doc.writexml(fp, indent="   ")
+        doc.writexml(fp)
 
 
 def test_conversions():
