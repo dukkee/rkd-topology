@@ -17,6 +17,7 @@ where:
 """
 import os
 import json
+import argparse
 from xml.dom import minidom
 
 TOPOLOGY_FILENAME = "kolejiste.svg"
@@ -27,6 +28,10 @@ SECTION_TYPE = "usek"
 
 RELATIONS_KEY = "relations"
 ADDITIONAL_DATA_KEY = 'additional-data'
+
+PARSER_DESCRIPTION = """
+It's a script to convert data between topology file and relations file.
+"""
 
 
 def get_block_id(node):
@@ -119,6 +124,29 @@ def test_conversions():
 
 
 if __name__ == '__main__':
-    convert_svg_to_dict()
-    # update_svg_from_dict()
+    parser = argparse.ArgumentParser(description=PARSER_DESCRIPTION)
+    parser.add_argument(
+        '--to-json',
+        action='store_const',
+        const=True,
+        help="Extract data from SVG file to JSON",
+    )
+    parser.add_argument(
+        '--to-svg',
+        action='store_const',
+        const=True,
+        help="Extract data from JSON file to SVG",
+    )
+    args = parser.parse_args()
+
+    if args.to_json and args.to_svg or (not args.to_json and not args.to_svg):
+        raise ValueError(
+            "Please try only one of options: --to-json or --to-svg"
+        )
+
+    if args.to_json:
+        convert_svg_to_dict()
+    elif args.to_svg:
+        update_svg_from_dict()
+
     # test_conversations()

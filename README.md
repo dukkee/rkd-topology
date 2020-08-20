@@ -70,13 +70,26 @@ x="..." y="...">302</tspan>
 You need to use `topology_converter.py` in the next cases:
  - generate vztahy.json from kolejiste.svg;
  - update kolejiste.svg from vztahy.json, where you did some updates.
+ 
+ ```text
+$ python topology_converter.py --help
+
+usage: topology_converter.py [-h] [--to-json] [--to-svg]
+
+It's a script to convert data between topology file and relations file.
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --to-json   Extract data from SVG file to JSON
+  --to-svg    Extract data from JSON file to SVG
+```
 
 ### Find path from section A to section B
 
 To do it you need to use topology.py:
 
 ```text
-$ python topology --help
+$ python topology.py --help
 
 usage: topology.py [-h] --start START --end END
 
