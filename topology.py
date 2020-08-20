@@ -56,7 +56,7 @@ def find_path(graph, source, target, data):
 
         block = data[item_id]
 
-        if block["type"] == SECTION_TYPE:
+        if block["type"] in (SECTION_TYPE, TRACK_SECTION_TYPE):
             sections_path.append(item_id)
         elif block["type"] == SWITCH_TYPE:
             if str(path[i + 1]) not in block["relations"]:
