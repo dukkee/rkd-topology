@@ -3,7 +3,7 @@
 This repository contains helpful functions to support topology and find paths
  between different parts of this topology.
 
-![topology](./topology.svg)
+![topology](./kolejiste.svg)
 
 ## Introduction
 
