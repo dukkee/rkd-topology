@@ -40,6 +40,16 @@ relationships between all sections. It has the next structure:
                 "4": "S+",
                 "5": "S-"
             }
+        },
+        "7": {
+            "type": "vyhybka",
+            "relations": {
+                "10": "start",
+                "11": {
+                    "12": "S+",
+                    "13": "S-"
+                }
+            }
         }
     }
 }

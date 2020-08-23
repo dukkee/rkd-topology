@@ -69,6 +69,20 @@ def find_path(graph, source, target, data):
             switch_state = block["relations"][str(path[i + 1])]
             if switch_state == SWITCH_START_TYPE:
                 switch_state = block["relations"][str(path[i - 1])]
+            if isinstance(switch_state, dict):
+                # {
+                #     "500": "start",
+                #     "529": {
+                #         "520": "S+",
+                #         "524": "S-"
+                #     }
+                # }
+                # due to a situation of uncertainty like on the example above
+                #  we must check one more element
+                try:
+                    switch_state = switch_state[str(path[i - 2])]
+                except KeyError:
+                    switch_state = switch_state[str(path[i + 2])]
 
             switch_list.append((item_id, switch_state))
 
