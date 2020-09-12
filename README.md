@@ -114,3 +114,43 @@ optional arguments:
   --end END      End path section
 
 ```
+
+### Complex cases explanation
+
+#### 1. Section "Okh UV1-2 529"
+
+![topology](images/case_529.png)
+
+It's an example of a section that contains 2 parts (were colored as red). In 
+this case we have other structure for details of the 501 section as below. 
+Since we have the same block for both branches, we make a nested block. In 
+the topology.py was added the additional check for such nested structure.
+
+```text
+# file vztahy.json
+
+"501": {
+    "type": "vyhybka",
+    "relations": {
+        "500": "start",
+        "529": {
+            "520": "S+",
+            "524": "S-"
+        }
+    }
+},
+```
+
+#### 2. Section "Okh UV5-6 318"
+
+![topology](images/case_318.png)
+
+In the case of section "Okh UV5-6 318" we ignore part from the right side of 
+section "Ku V6 305" in vztahy.json to save consistency of final results.
+
+#### 3. Section "Ku UVA 319"
+
+![topology](images/case_319.png)
+
+In the case of section "Okh UV5-6 318" we ignore part from the right side of 
+section "Ku VA 306" in vztahy.json to save consistency of final results.
