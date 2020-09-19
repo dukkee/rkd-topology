@@ -93,10 +93,22 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=PARSER_DESCRIPTION)
     parser.add_argument('--start', required=True, help="Start path section")
     parser.add_argument('--end', required=True, help="End path section")
+    parser.add_argument(
+        '--show-graph',
+        action='store_const',
+        const=True,
+        help="Show built graph for debugging purposes",
+    )
     args = parser.parse_args()
 
     with open("vztahy.json") as fp:
         data = json.load(fp)
 
     graph = build_topology_graph(data["relations"])
+
+    if args.show_graph:
+        import matplotlib.pyplot as plt
+        nx.draw(graph, with_labels=True)
+        plt.show()
+
     print(*find_path(graph, args.start, args.end, data["data"]), sep="\n")

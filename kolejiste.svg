@@ -536,7 +536,7 @@
 <circle cx="573.78345" cy="263.29028" id="circle-3" r="2.457" style="display:inline;opacity:1;fill:#666666;fill-opacity:1;stroke:none;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
 <path d="m 743.85441,531.43626 v -15.29" id="path-5" inkscape:connector-curvature="0" style="display:inline;opacity:1;fill:#808080;fill-rule:evenodd;stroke:#666666;stroke-width:4.36854887;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
 <text id="text-5" style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" x="445.54041" y="280.4906">
-<tspan id="tspan-5" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.30000019px;line-height:100%;font-family:sans-serif;text-align:start;word-spacing:0px;writing-mode:lr-tb;text-anchor:start" x="445.54041" y="280.4906">Okh K101<tspan additional-data="{}" dy="12" id="tspan1996" relations="[511, 504, 533]" type="usek" x="445.54041">534</tspan>
+<tspan id="tspan-5" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.30000019px;line-height:100%;font-family:sans-serif;text-align:start;word-spacing:0px;writing-mode:lr-tb;text-anchor:start" x="445.54041" y="280.4906">Okh K101<tspan additional-data="{}" dy="12" id="tspan1996" relations="[530, 533]" type="usek" x="445.54041">534</tspan>
  </tspan>
 </text>
 <text id="text-6" style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" x="782.85071" y="198.54082">
@@ -658,7 +658,7 @@
 </text>
 <path d="m 613.92863,516.12324 -19.629,27.626" id="path-17" inkscape:connector-curvature="0" style="display:inline;fill:#666666;fill-rule:evenodd;stroke:#666666;stroke-width:1.09213722px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker21495)"/>
 <text id="text-17" style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;display:inline;fill:#666666;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" x="503.1842" y="550.59283">
-<tspan id="tspan-17" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.30000019px;line-height:100%;font-family:sans-serif;text-align:start;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#666666;stroke:none" x="503.1842" y="550.59283">Okh V5<tspan additional-data="{'relations': {'505': 'start', '530': 'S+', '534': 'S-'}}" dy="12.3" id="tspan2128" relations="[530, 505, 534]" type="vyhybka" x="503.1842">504</tspan>
+<tspan id="tspan-17" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.30000019px;line-height:100%;font-family:sans-serif;text-align:start;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#666666;stroke:none" x="503.1842" y="550.59283">Okh V5<tspan additional-data="{'relations': {'505': 'start', '530': {'502': 'S+', '534': 'S-'}}}" dy="12.3" id="tspan2128" relations="[530, 505]" type="vyhybka" x="503.1842">504</tspan>
  </tspan>
 </text>
 <path d="m 560.29863,514.15366 -9.364,23.678" id="path-18" inkscape:connector-curvature="0" style="display:inline;fill:#666666;fill-rule:evenodd;stroke:#666666;stroke-width:1.09213722px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker21495)"/>
@@ -688,7 +688,7 @@
 </text>
 <text id="text-22" style="font-weight:700;font-size:12.30000019px;line-height:12.30000019px;white-space:pre" x="74.703362" y="-407.36981">
 <tspan id="tspan2160" x="395.90836" y="536.61224">Okh UV3-4-5</tspan>
-<tspan additional-data="{}" dy="12.3" id="tspan2162" relations="[502, 504]" type="usek" x="395.90836">530</tspan>
+<tspan additional-data="{}" dy="12.3" id="tspan2162" relations="[502, 504, 534]" type="usek" x="395.90836">530</tspan>
 </text>
 <path d="m 933.58763,444.78024 -11.203,-5.72" id="path-27" inkscape:connector-curvature="0" style="fill:none;fill-rule:evenodd;stroke:#666666;stroke-width:4.36854887;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
 <path d="m 723.67717,516.60624 v -10.922" id="path-28" inkscape:connector-curvature="0" style="fill:none;fill-rule:evenodd;stroke:#666666;stroke-width:4.36854887;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>

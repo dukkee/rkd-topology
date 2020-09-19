@@ -101,7 +101,7 @@ To do it you need to use topology.py:
 ```text
 $ python topology.py --help
 
-usage: topology.py [-h] --start START --end END
+usage: topology.py [-h] --start START --end END [--show-graph]
 
 Find path between start and stop sections. This script will print list of
 sections IDs and list of switch sections IDs with their states ("S+" state
@@ -112,8 +112,20 @@ optional arguments:
   -h, --help     show this help message and exit
   --start START  Start path section
   --end END      End path section
+  --show-graph   Show built graph for debugging purposes
 
 ```
+
+### Check built graph visually
+
+Sometimes will be faster to check the built graph visually for issue fixing. You 
+need to add --show-graph parameter to do it. Pay attention that before this you 
+need to install matplotlib dependency.
+
+```text
+$ python topology.py --start 521 --end 534 --show-graph
+```
+ 
 
 ### Complex cases explanation
 
@@ -154,3 +166,11 @@ section "Ku V6 305" in vztahy.json to save consistency of final results.
 
 In the case of section "Okh UV5-6 318" we ignore part from the right side of 
 section "Ku VA 306" in vztahy.json to save consistency of final results.
+
+#### 3. Section "Okh UV3-4-5 530"
+
+![topology](images/case_530.png)
+
+In the case of section "Okh UV3-4-5 530" we ignore part from the left side of 
+section "Okh V3 502" and the right side of section "Okh V5 504" in vztahy.json
+ to save consistency of final results.
