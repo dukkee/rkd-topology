@@ -174,3 +174,11 @@ section "Ku VA 306" in vztahy.json to save consistency of final results.
 In the case of section "Okh UV3-4-5 530" we ignore part from the left side of 
 section "Okh V3 502" and the right side of section "Okh V5 504" in vztahy.json
  to save consistency of final results.
+
+#### 3. Section "Okh UV6-7 531"
+
+![topology](images/case_531.png)
+
+In the case of section "Okh UV6-7 531" we ignore part from the left side of 
+section "Okh V6 505" and the right side of section "Okh V7 506" in vztahy.json
+ to save consistency of final results.
